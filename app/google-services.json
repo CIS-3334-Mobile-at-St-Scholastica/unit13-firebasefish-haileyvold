@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "3901364435",
-    "firebase_url": "https://fishlocatorfirebase.firebaseio.com",
-    "project_id": "fishlocatorfirebase",
-    "storage_bucket": "fishlocatorfirebase.appspot.com"
+    "project_number": "981684195280",
+    "firebase_url": "https://unit13-firebasefish-haileyvold.firebaseio.com",
+    "project_id": "unit13-firebasefish-haileyvold",
+    "storage_bucket": "unit13-firebasefish-haileyvold.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:3901364435:android:a1695d7ecc99ba5e",
+        "mobilesdk_app_id": "1:981684195280:android:a1695d7ecc99ba5e",
         "android_client_info": {
           "package_name": "css.cis3334.fishlocatorfirebase"
         }
       },
       "oauth_client": [
         {
-          "client_id": "3901364435-tua4v0v814eqqdl2slbt7d5ue4h4uc54.apps.googleusercontent.com",
+          "client_id": "981684195280-0s8gfarak4kfhbase2db35aljdm9gnce.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "css.cis3334.fishlocatorfirebase",
-            "certificate_hash": "29200dd6dc1e1e69796836b85e48f5ed71dcb379"
+            "certificate_hash": "1d16b4633b03e5310725e06a7569e4b943315e37"
           }
         },
         {
-          "client_id": "3901364435-d6pdgacvm4vbaaf5unuos3kvfmlc4mmu.apps.googleusercontent.com",
+          "client_id": "981684195280-u5mjii3vl3lhfkatq9n1l9ifigeqe669.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyASHAV-NakYROxXJsnOQRDsTQJhJOR9J_o"
+          "current_key": "AIzaSyCyqpwqeFcc1iJsUDYI4rYF0mGK68MZjWY"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "3901364435-d6pdgacvm4vbaaf5unuos3kvfmlc4mmu.apps.googleusercontent.com",
+              "client_id": "981684195280-u5mjii3vl3lhfkatq9n1l9ifigeqe669.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

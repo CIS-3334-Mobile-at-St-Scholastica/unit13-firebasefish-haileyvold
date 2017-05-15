@@ -1,6 +1,7 @@
 package css.cis3334.fishlocatorfirebase;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
     int positionSelected;
     Fish fishSelected;
 
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
+    public MainActivity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +47,23 @@ public class MainActivity extends AppCompatActivity {
         setupAddButton();
         setupDetailButton();
         setupDeleteButton();
+
+        mAuth = FirebaseAuth.getInstance();
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d("cis3334", "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    Log.d("cis3334", "onAuthStateChanged:signed_out");
+                }
+                // ...
+            }
+        };
     }
 
     private void setupFirebaseDataChange() {
@@ -111,4 +137,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+
 }
+
